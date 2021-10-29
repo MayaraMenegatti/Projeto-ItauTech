@@ -1,0 +1,115 @@
+<!--Informa ao navegador qual é a especficação do código que está sendo usado no documento-->
+<!DOCTYPE html>
+<!--Declara o idioma principal do documento-->
+<html lang="pt-br">
+
+<head>
+    <!--Título da página-->
+    <title>Dados de Clientes e Contas | SixTech</title>
+    <!--Exibe a acentuação em português de forma correta-->
+    <meta charset="utf-8">
+    <!--Fonte Google 'Noto Sans'-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans">
+    <!--Style-->
+    <link rel="stylesheet" href="./content/style.css">
+    <!--Ícone da página-->
+    <link rel="icon" type="image/webp" href="./imagens/logo-itau.webp">
+    <!-- Funções do site -->
+    <!-- <script src="./content/scripts.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<!-- <body onload= "readfile()"> -->
+
+<body>
+    <!-- Barra de navegação -->
+    <nav>
+        <a href="https://www.itau.com.br"><img src="./imagens/logo-itau.webp" alt="Logotipo do Itaú"></a>
+        <h1>dados de clientes e contas bancárias</h1>
+    </nav>
+
+    <!--Conteúdo principal da página-->
+    <main>
+        <section>
+            <h1>consultas</h1>
+            <!--Procura por um cliente ou conta específica-->
+            <form action="javascript:void(0);">
+                <div class="formInput">
+                    <input type="text" id="formProcura" name="procura" placeholder=" " required
+                        onfocus="this.select();">
+                    <label class="label-name" for="formProcura">
+                        <span class="content-name" id="tituloProcura">cliente / conta</span>
+                    </label>
+                </div>
+                <div class="formSubmit">
+                    <button onmouseover="mudaTitulo('cliente')" onmouseout="mudaTitulo('cliente / conta')"
+                        onclick="retornaCliente()">consulta cliente</button>
+                    <button onmouseover="mudaTitulo('conta')" onmouseout="mudaTitulo('cliente / conta')"
+                        onclick="retornaConta()">consulta conta</button>
+                    <button onmouseover="exigePesquisa(false)" onmouseout="exigePesquisa(true)"
+                        onclick="retornaClientes()">todos os
+                        clientes</button>
+                    <button onmouseover="exigePesquisa(false)" onmouseout="exigePesquisa(true)"
+                        onclick="retornaContas()">todas as
+                        contas</button>
+                </div>
+            </form>
+
+            <!--Exibe informações de uma conta específico-->
+            <div id="contaModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('contaModal')">&times;</span>
+                    <h2 id="titConta"></h2>
+                    <table id="conta"></table>
+                </div>
+            </div>
+
+            <!--Exibe informações de um cliente específico-->
+            <div id="clienteModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('clienteModal')">&times;</span>
+                    <h2 id="titCliente"></h2>
+                    <table id="cliente"></table>
+                </div>
+            </div>
+
+            <!--Exibe todas as contas-->
+            <div id="contasModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('contasModal')">&times;</span>
+                    <h2>dados das contas</h2>
+                    <table id="contas"></table>
+                </div>
+            </div>
+
+            <!--Exibe todos os clientes-->
+            <div id="clientesModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('clientesModal')">&times;</span>
+                    <h2>dados dos clientes</h2>
+                    <table id="clientes"></table>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <!-- Rodapé -->
+    <footer>
+        <p>
+        <h1>© 2021 Itaú Unibanco Holding S.A. CNPJ: 60.872.504/0001-23</h1>
+        </p>
+        <p>
+            Praça Alfredo Egydio de Souza Aranha, 100, Torre Olavo Setubal, Parque Jabaquara - CEP 04344-902 - São Paulo
+            - Brasil
+        </p>
+        <ul>
+            <li><a target="_blank" href="https://www.gama.academy/">Parceria com Gama Academy</a></li>
+        </ul>
+    </footer>
+
+    <script type="text/javascript" src="./content/scripts.js"></script>
+</body>
+
+</html>

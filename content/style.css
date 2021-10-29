@@ -1,0 +1,289 @@
+/* Definição de variáveis
+https://www.w3schools.com/css/css3_variables.asp */
+
+:root {
+    --itau-laranja: #ec7000;
+    --itau-azul: #003499;
+    --itau-fundo: #efe9e5;
+    --itau-rodape: #706a66;
+    --itau-btn_hover: #d27000;
+    --itau-form: #56504c;
+    --padding-lateral: 120px;
+}
+
+/* Tamanho mínimo da página */
+
+html {
+    min-width: 768px;
+}
+
+/* Corpo da página */
+
+body {
+    font-family: 'Noto Sans';
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Barra de navegação principal */
+
+nav {
+    height: 50px;
+    background-color: var(--itau-laranja);
+    padding: 19px var(--padding-lateral);
+}
+
+/* Logo da barra de navegação */
+
+nav img {
+    float: left;
+    width: 50px;
+}
+
+nav h1 {
+    float: left;
+    font-size: 17px;
+    padding-left: 50px;
+    text-decoration: none;
+    color: white;
+}
+
+/* Bloco principal */
+
+main {
+    background-color: var(--itau-fundo);
+    padding: 35px var(--padding-lateral);
+    display: flex;
+    justify-content: center;
+}
+
+main section {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 8px gray;
+    padding: 30px;
+    font-size: 15px;
+    width: 80%;
+}
+
+main h1 {
+    color: var(--itau-laranja);
+    font-size: 30px;
+}
+
+/* Formulário */
+
+form {
+    padding: 0;
+}
+
+/* Animação dos labels: https://www.youtube.com/watch?v=IxRJ8vplzAo */
+
+.formInput {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.formInput input, .formInput select {
+    background-color: white;
+    width: calc(100% - 38px);
+    height: 100%;
+    padding: 0 18px;
+    border: 1px solid var(--itau-form);
+    color: var(--itau-form);
+    outline: none;
+}
+
+.formInput select {
+    width: 100%;
+}
+
+.formInput select option {
+    background-color: white;
+}
+
+.formInput label {
+    position: absolute;
+    bottom: 12px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.formInput label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+}
+
+.content-name {
+    position: absolute;
+    bottom: 3px;
+    left: 0px;
+    transition: all 0.3s ease;
+    background-color: white;
+    padding: 0 8px;
+}
+
+.formInput input:focus+.label-name .content-name, .formInput select:focus+.label-name .content-name, .formInput textarea:focus+.label-name .content-name, .formInput input:not(:placeholder-shown)+.label-name .content-name, .formInput select:not(:placeholder-shown)+.label-name .content-name, .formInput textarea:not(:placeholder-shown)+.label-name .content-name {
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: var(--itau-laranja);
+}
+
+/* Mouse sobre inputs ou Inputs recebem foco*/
+
+input:hover, textarea:hover, select:hover, input:focus, textarea:focus, select:focus {
+    border: 1px solid var(--itau-laranja);
+}
+
+/* Botão de enviar */
+
+input[type=submit], button {
+    width: 190px;
+    background-color: var(--itau-laranja);
+    color: white;
+    padding: 14px 20px;
+    margin-top: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+input[type=submit]:hover, button:hover {
+    background-color: var(--itau-btn_hover);
+}
+
+.formSubmit {
+    text-align: center;
+}
+
+/* Rodapé */
+
+footer {
+    font-size: 12px;
+    background-color: var(--itau-rodape);
+    color: white;
+    height: 160px;
+    padding: 30px 0 0 40%;
+}
+
+footer h1 {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    float: left;
+    font-size: 13px;
+    padding-right: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.td_right {
+    text-align: right;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.modal-content h2 {
+    color: var(--itau-laranja);
+}
+
+/* Add Animation */
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
